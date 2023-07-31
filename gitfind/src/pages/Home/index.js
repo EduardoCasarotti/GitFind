@@ -19,11 +19,15 @@ function App() {
               <h3>
                 Eduardo Alves Casarotti
               </h3>
+              <span>@EduardoCasarotti</span>
               <p>
-                Descrição
+                Técnico em Desenvolvimento de Sistemas
+                <br/> 
+                Futuro desenvedor Front-end, 26 anos, São Paulo.
               </p>
             </div>
           </div>
+          <hr/>
         </div>
      </div>
     </div>

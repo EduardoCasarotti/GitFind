@@ -49,6 +49,7 @@ button {
 .perfil{
     display: flex;
     margin: 20px 0;
+    font-family: 'Roboto', sans-serif;
     
 }
 .profile{
@@ -60,23 +61,37 @@ button {
     border-radius: 64px;
     
 }
-.profile h3{
+.perfil h3{
     width: 90px;
     height: 24px;
     top: 142px;
     left: 331px;
     font-family: Kailasa;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 10px;
     letter-spacing: 0em;
     text-align: left;
-
-
+    margin: 0 0 0 12px ;
+    color: #999999;
+    margin-right: 32px;
 
     
 }
 
-.profile p{
-    
+.perfil span{
+    display: block;
+    color: #999999;
+    font-size: 6px;
+    margin: 0 0 0 12px ;
+}
+
+.perfil p{
+    color: #999999;
+    font-size: 6px;
+    margin: 12px 0 0 12px ;
+}
+
+hr{
+    border: 1px solids;
 }
