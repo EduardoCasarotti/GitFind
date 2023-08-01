@@ -17,8 +17,8 @@ function App() {
     
     console.log(newUser);
     if (newUser.name){
-      const{avtar_url, name, bio} = newUser;
-      setCurrentUser({avtar_url, name, bio});
+      const{avtar_url, name, bio, login} = newUser;
+      setCurrentUser({avtar_url, name, bio,login });
 
       const reposData = await fetch(`http://api.github.com/users/${user}/repos`);
       const newRepos =  await reposData.json();
@@ -40,30 +40,35 @@ function App() {
             <input name="usuario" value={user} onChange={event =>setUser(event.target.value)} placeholder="@username" />
             <button onClick={handleGetData}>Buscar</button>
           </div>
-          {currentUser.name ? (
-            <div className="perfil">
-            <img src={perfil} className="profile" />
-            <div>
-              <h3>Eduardo Alves Casarotti</h3>
-              <span>@EduardoCasarotti</span>
-              <p>
-                Técnico em Desenvolvimento de Sistemas
-                <br />
-                Futuro desenvedor Front-end, 26 anos, São Paulo.
-              </p>
-            </div>
+          {currentUser?.name ? (
+            <>
+             <div className="perfil">
+             <img src={currentUser.avtar_url} className="profile" />
+             <div>
+               <h3>{currentUser.name}</h3>
+               <span>{currentUser.login}</span>
+               <p>
+               {currentUser.bio}
+               </p>
+             </div>
+           </div>
+           <hr />
+           </>
+          ):null}
+         
+       
+
+          {repos?.length? (
+             <div className=''>
+             <h4 className="repositorio">Repositórios</h4>
+             {repos.map (repo => (
+               <ItemList title={repo.name} description={repo.description}/>
+
+             ))}
+             
+           </div>
+          ): null}
           </div>
-          ) : null}
-          
-          
-          <hr />
-          <div className=''>
-            <h4 className="repositorio">Repositórios</h4>
-            <ItemList title='teste1' description='teste de desicrição'/>
-            <ItemList title='teste1' description='teste de desicrição'/>
-            <ItemList title='teste1' description='teste de desicrição'/>
-          </div>
-        </div>
       </div>
     </div>
   );
